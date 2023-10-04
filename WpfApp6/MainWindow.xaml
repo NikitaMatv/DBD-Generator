@@ -1,0 +1,70 @@
+﻿<Window x:Class="WpfApp6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        Title="DBD Generator" Height="280" Width="800" ResizeMode="CanMinimize">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel  Orientation="Horizontal"  VerticalAlignment="Center">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Width="200">
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Right">
+
+                    </StackPanel  >
+                    <TextBlock Height="20" Width="110">Список участников</TextBlock>
+                    <ListView x:Name="LvYchast" Width="100" Height="150">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}"></TextBlock>
+                                </StackPanel>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackPanel>
+                <StackPanel Margin="10">
+                    <TextBlock>Список манрв</TextBlock>
+                    <ListView x:Name="LvMarder" Width="100" Height="150">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Button x:Name="BtGen" Click="BtGen_Click">Список манов</Button>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal"  VerticalAlignment="Center">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Width="200">
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Right">
+
+                    </StackPanel  >
+                    <TextBlock Height="20" Width="110">Список бафов</TextBlock>
+                    <ListView x:Name="LvYchasts" Width="200" Height="150">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}"></TextBlock>
+                                </StackPanel>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackPanel>
+                <StackPanel Margin="10" Orientation="Vertical">
+                    <TextBlock Height="20"> Выпало:</TextBlock>
+                    <TextBlock x:Name="TbBuff" Text="{Binding Name}"  Height="20"></TextBlock>
+                    <Button x:Name="BtGens" Height="50" Click="BtGens_Click">Генерация бафа</Button>
+                </StackPanel>
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
